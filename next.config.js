@@ -5,8 +5,8 @@ const withMDX = require("@next/mdx")({
 const env = {
     "APP_LOCALE": "en",
     "APP_APPLE_TOUCH_ICON": "/favicon128.png",
-    "APP_FAVICON_16x16": "/favicon32.png",
-    "APP_FAVICON_32x32": "/favicon16.png",
+    "APP_FAVICON_16x16": "/favicon16.png",
+    "APP_FAVICON_32x32": "/favicon32.png",
 
     "APP_TITLE": "Lyra's Cafe - Pastries & Baked Goods",
     "APP_DESCRIPTION": "Home-made pastries made by Lyra!",
