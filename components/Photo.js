@@ -1,56 +1,58 @@
 import styled from '@emotion/styled'
 
-const Container = styled.div`
-    height: 540px;
-    width: 480px;
+const Container = styled.a`
+    height: 350px;
+    width: 320px;
     background: #FFFFFF;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.05);
-    transform: rotate(-5deg);
-    padding: 20px;
+    transform: ${props => `rotate(${props.rotate}deg)`};
+    padding: 14px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    transition: all ease-in 180ms;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 
     section {
-        background: gray;
         flex-grow: 1;
-        max-width: 440px;
-        max-height: 400px;
+        max-width: 300px;
+        max-height: 260px;
+        overflow: hidden;
     }
 
     p {
         width: 100%;
-        height: 140px;
+        height: 20px;
         text-align: center;
         margin-top: 18px;
         font-family: Fall-In-Love;
-        font-size: 3em;
+        font-size: 1.5em;
     }
 
     @media(max-width: 425px) {
-        width: 320px;
-        height: 360px;
-
         section {
             max-width: 280px;
-            max-height: 250px;
+            max-height: 280px;
         }
 
         p {
             margin-top: 12px;
             height: 40px;
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
     }
 `
 
-const Photo = () => (
-    <Container>
+const Photo = (props) => (
+    <Container rotate={props.rotate} href={props.url} className="no-underline" target="_blank"  rel="noopener noreferrer">
         <section>
-            <img src="/content-images/strawberry-matcha-tartlets.png" alt="strawberry-matcha-tartlets" />
+            <img src={`/content-images/${props.content}`} alt={props.content} />
         </section>
-        <p>Hi, I'm Lyra!</p>
+        <p>{props.title}</p>
     </Container>
 )
 
